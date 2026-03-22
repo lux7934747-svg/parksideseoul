@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE PARKSIDE SEOUL - Header Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #000; /* 데모를 위한 배경색 */
+            height: 200vh; /* 스크롤 효과 확인을 위한 높이 */
+        }
+
+        /* Hero Background Placeholder */
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('HEADER_BG_URL');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background-color: transparent;
+        }
+
+        /* Hover or Scrolled State */
+        header:hover,
+        header.scrolled {
+            background-color: rgba(245, 242, 237, 0.95); /* 베이지 톤 반투명 */
+            height: 80px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Logo Section */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo-container img {
+            height: 40px; /* 로고 높이 조절 */
+            width: auto;
+            transition: filter 0.4s ease;
+        }
+
+        /* Scrolled/Hover 시 로고 색상 반전 (필요시) */
+        header:hover .logo-container img,
+        header.scrolled .logo-container img {
+            /* 로고가 화이트라면 다크 톤으로 변경하는 필터 예시 */
+            /* filter: invert(1) brightness(0.2); */
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #FFFFFF; /* 기본 화이트 컬러 */
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding: 10px 0;
+            transition: color 0.4s ease;
+        }
+
+        /* Scrolled/Hover 시 텍스트 컬러 변경 */
+        header:hover .nav-item a,
+        header.scrolled .nav-item a {
+            color: #4A3F35; /* 딥 브론즈/그레이 톤 */
+        }
+
+        /* Hover Underline Effect */
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Button (Optional Placeholder) */
+        .mobile-toggle {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                padding: 0 30px;
+            }
+            .nav-menu {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* 모바일 대응은 별도 구현 필요 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 배경 이미지 플레이스홀더 -->
+    <div class="hero-bg"></div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="logo-container">
+            <!-- 세로선 그래픽과 텍스트가 결합된 로고 이미지 -->
+            <img src="LOGO_URL" alt="THE PARKSIDE SEOUL">
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#">사업안내</a></li>
+            <li class="nav-item"><a href="#">입지환경</a></li>
+            <li class="nav-item"><a href="#">상품안내</a></li>
+            <li class="nav-item"><a href="#">관심고객등록</a></li>
+        </ul>
+    </header>
+
+    <script>
+        // 스크롤 시 헤더 스타일 변경을 위한 스크립트
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>

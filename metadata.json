@@ -1,0 +1,7 @@
+{
+  "name": "The Parkside Seoul - A New Universe in Hannam",
+  "description": "Seoul's first MXD (Mixed-use Development) landmark in Hannam-dong. Featuring The Parkside Suite, Rosewood Seoul, and premium retail/office spaces with permanent Yongsan Park views.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
