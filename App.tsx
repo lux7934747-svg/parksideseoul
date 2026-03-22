@@ -61,7 +61,7 @@ const App: React.FC = () => {
           <div className="md:col-span-2">
             <h1 className="font-serif text-3xl tracking-[0.3em] font-light text-[#F5F2ED] mb-8">THE PARKSIDE <span className="text-[#C5A059]">SEOUL</span></h1>
             <p className="text-xs leading-relaxed max-w-sm">
-              더 파크사이드 서울 | 주식회사 태복플래닝 | 본 사이트의 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.
+              더 파크사이드 서울 | 한남럭스부동산중개 | 본 사이트의 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.
             </p>
           </div>
           <div className="space-y-4">
@@ -83,7 +83,7 @@ const App: React.FC = () => {
         </div>
         <div className="max-w-[1440px] mx-auto mt-20 pt-8 border-t border-white/5 flex justify-between items-center text-[10px] tracking-widest">
           <p>© 2025 THE PARKSIDE SEOUL. ALL RIGHTS RESERVED.</p>
-          <p>DEVELOPED BY TAEBOK PLANNING</p>
+          <p>DEVELOPED BY HANNAM LUX</p>
         </div>
       </footer>
 
